@@ -26,5 +26,6 @@ func render(c echo.Context, file string, data map[string]interface{}) error {
 	}
 
 	// ステータスコード 200 で HTML データをレスポンス
+	// HTMLBlob(htmlファイルを返す)
 	return c.HTMLBlob(http.StatusOK, b)
 }
