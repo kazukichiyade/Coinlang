@@ -12,8 +12,15 @@ var e = Router()
 
 func Router() *echo.Echo {
 	e := echo.New()
-	e.GET("/", handler.HandlerIndex)
 
+	// ルーティング
+	e.GET("/", handler.HandlerIndex)
+	e.GET("/signup", handler.HandlerSignup)
+	e.GET("/login", handler.HandlerLogin)
+	e.GET("/coinlist", handler.HandlerCoinList)
+	e.GET("/mypage", handler.HandlerMyPage)
+
+	// ミドルウェア
 	e.Use(middleware.Recover())
 	e.Use(middleware.Logger())
 	e.Use(middleware.Gzip())
