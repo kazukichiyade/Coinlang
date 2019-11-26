@@ -6,7 +6,7 @@ import (
 )
 
 func HandlerIndex(c echo.Context) error {
-	return c.String(http.StatusOK, "HelloWorld")
+	return c.String(http.StatusOK, "index")
 }
 
 func HandlerSignup(c echo.Context) error {
