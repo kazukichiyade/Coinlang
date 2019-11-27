@@ -10,8 +10,6 @@ import (
 // 相対パスを定数として宣言
 const tmplPath = "src/template/"
 
-// pongo2を利用してテンプレートファイルとデータからHTMLを生成(HTMLをbyte型にしてreturn)
-/* 関数(引数map(型アサーション), 戻り値slice) */
 func htmlBlob(file string, data map[string]interface{}) ([]byte, error) {
 	return pongo2.Must(pongo2.FromCache(tmplPath + file)).ExecuteBytes(data)
 }
@@ -26,6 +24,5 @@ func render(c echo.Context, file string, data map[string]interface{}) error {
 	}
 
 	// ステータスコード 200 で HTML データをレスポンス
-	// HTMLBlob(htmlファイルを返す)
 	return c.HTMLBlob(http.StatusOK, b)
 }
