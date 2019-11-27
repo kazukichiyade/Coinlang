@@ -1,0 +1,18 @@
+{% extends "../layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/css/signup.css" />
+{% endblock %}
+
+{% block js %}
+<script src="/js/signup.js"></script>
+{% endblock %}
+
+{% block title %}
+新規登録 | {{ block.Super }}
+{% endblock %}
+
+{% block content %}
+<p>{{ Message }}</p>
+<p>{{ Now }}</p>
+{% endblock %}

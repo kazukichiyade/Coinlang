@@ -1,0 +1,18 @@
+{% extends "../layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/css/login.css" />
+{% endblock %}
+
+{% block js %}
+<script src="/js/login.js"></script>
+{% endblock %}
+
+{% block title %}
+ログイン | {{ block.Super }}
+{% endblock %}
+
+{% block content %}
+<p>{{ Message }}</p>
+<p>{{ Now }}</p>
+{% endblock %}

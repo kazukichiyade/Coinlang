@@ -1,0 +1,18 @@
+{% extends "../layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/css/mypage.css" />
+{% endblock %}
+
+{% block js %}
+<script src="/js/mypage.js"></script>
+{% endblock %}
+
+{% block title %}
+マイページ | {{ block.Super }}
+{% endblock %}
+
+{% block content %}
+<p>{{ Message }}</p>
+<p>{{ Now }}</p>
+{% endblock %}

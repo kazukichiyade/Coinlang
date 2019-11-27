@@ -1,1 +1,18 @@
-aaa
+{% extends "../layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/css/index.css" />
+{% endblock %}
+
+{% block js %}
+<script src="/js/index.js"></script>
+{% endblock %}
+
+{% block title %}
+トップページ | {{ block.Super }}
+{% endblock %}
+
+{% block content %}
+<p>{{ Message }}</p>
+<p>{{ Now }}</p>
+{% endblock %}

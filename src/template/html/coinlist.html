@@ -1,0 +1,18 @@
+{% extends "../layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/css/coinlist.css" />
+{% endblock %}
+
+{% block js %}
+<script src="/js/coinlist.js"></script>
+{% endblock %}
+
+{% block title %}
+一覧 | {{ block.Super }}
+{% endblock %}
+
+{% block content %}
+<p>{{ Message }}</p>
+<p>{{ Now }}</p>
+{% endblock %}
