@@ -11,6 +11,7 @@ import (
 var db *sqlx.DB
 
 func ConnectDB() *sqlx.DB {
+	// 接続に必要な情報をos.Getenvで環境変数から取得
 	dsn := os.Getenv("DSN")
 
 	db, err := sqlx.Open("mysql", dsn)
