@@ -21,11 +21,13 @@ func ConnectDB() *sqlx.DB {
 		log.Fatal(err)
 	}
 
+	// Pingでコールして疎通確認
 	if err := db.Ping(); err != nil {
 		// エラーに入るとDBをcloseする
-		defer db.Close()
 		log.Fatal(err)
 	}
+	// defer(一番最後に実行)
+	defer db.Close()
 
 	// エラーが無ければメッセージとdbを返す
 	log.Println("DB CONNECT SUCCESS!!!")
