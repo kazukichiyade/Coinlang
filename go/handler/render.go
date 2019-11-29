@@ -10,6 +10,7 @@ import (
 // 相対パスを定数として宣言
 const tmplPath = "src/template/"
 
+// Mustでファイルを呼び出して、ExecuteBytesで埋め込んでいる
 func htmlBlob(file string, data map[string]interface{}) ([]byte, error) {
 	return pongo2.Must(pongo2.FromCache(tmplPath + file)).ExecuteBytes(data)
 }

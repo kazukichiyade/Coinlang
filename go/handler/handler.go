@@ -6,6 +6,7 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
+// echo.Context(標準パッケージのresponseWriterやRequestと同じ)
 func HandlerIndex(c echo.Context) error {
 	data := map[string]interface{}{
 		"Message": "Index",
