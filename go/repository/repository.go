@@ -33,3 +33,7 @@ func ConnectDB() *sqlx.DB {
 	log.Println("DB CONNECT SUCCESS!!!")
 	return db
 }
+
+func SetDB(d *sqlx.DB) {
+	db = d
+}

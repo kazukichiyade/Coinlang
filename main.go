@@ -14,6 +14,7 @@ var db *sqlx.DB
 func main() {
 	// DB接続(ConnectDBの戻り値をグローバル変数に格納)
 	db = repository.ConnectDB()
+	repository.SetDB(db)
 
 	// ルーティングを変数へ
 	route := router.Router()
