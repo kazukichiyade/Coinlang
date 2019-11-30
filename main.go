@@ -18,8 +18,10 @@ func main() {
 	db = repository.ConnectDB()
 	repository.SetDB(db)
 
-	// BitflyerのAPIを取得
-	api.GetCoinApi()
+	// BitflyerビットコインのAPIを取得
+	api.GetBitcoinApi()
+	// BitflyerイーサリアムのAPIを取得
+	api.GetEthereumApi()
 
 	// ルーティングを変数へ
 	route := router.Router()
