@@ -1,8 +1,10 @@
 package main
 
 import (
+	"coinlang/go/api"
 	"coinlang/go/repository"
 	"coinlang/go/router"
+
 	_ "github.com/go-sql-driver/mysql" // Using MySQL driver
 	"github.com/jmoiron/sqlx"
 )
@@ -15,6 +17,9 @@ func main() {
 	// DB接続(ConnectDBの戻り値をグローバル変数に格納)
 	db = repository.ConnectDB()
 	repository.SetDB(db)
+
+	// BitflyerのAPIを取得
+	api.GetCoinApi()
 
 	// ルーティングを変数へ
 	route := router.Router()
