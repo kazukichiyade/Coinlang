@@ -26,6 +26,8 @@ func main() {
 	api.GetXrpApi()
 	// BitbankモナコインのAPIを取得
 	api.GetMonaApi()
+	// BitbankビットコインキャッシュのAPIを取得
+	api.GetBccApi()
 
 	// ルーティングを変数へ
 	route := router.Router()
