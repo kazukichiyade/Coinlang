@@ -22,6 +22,8 @@ func main() {
 	api.GetBitcoinApi()
 	// BitflyerイーサリアムのAPIを取得
 	api.GetEthereumApi()
+	// BitbankリップルのAPIを取得
+	api.GetXrpApi()
 
 	// ルーティングを変数へ
 	route := router.Router()
