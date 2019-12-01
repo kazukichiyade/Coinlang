@@ -78,3 +78,25 @@ func GetXrpApi() {
 	// byte配列をstring型へキャスト
 	fmt.Println(string(byteArray))
 }
+
+// BitbankのLTCのAPIを取得する関数
+func GetLtcApi() {
+	// GetでWebAPIに対してアクセスする(bitbankの場合エンドポイントはこちらに記述)
+	api, err := http.Get(bitbankBaseUrl + "mona_jpy/ticker")
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// 最後にapiをCloseする
+	defer api.Body.Close()
+
+	// ReadAllは、エラーまたはEOFに達するまでrから読み込み、読み込んだデータを返す
+	byteArray, err := ioutil.ReadAll(api.Body)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	// byte配列をstring型へキャスト
+	fmt.Println(string(byteArray))
+}
