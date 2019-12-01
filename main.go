@@ -24,8 +24,8 @@ func main() {
 	api.GetEthereumApi()
 	// BitbankリップルのAPIを取得
 	api.GetXrpApi()
-	// BitbankライトコインのAPIを取得
-	api.GetLtcApi()
+	// BitbankモナコインのAPIを取得
+	api.GetMonaApi()
 
 	// ルーティングを変数へ
 	route := router.Router()

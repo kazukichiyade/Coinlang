@@ -79,8 +79,8 @@ func GetXrpApi() {
 	fmt.Println(string(byteArray))
 }
 
-// BitbankのLTCのAPIを取得する関数
-func GetLtcApi() {
+// BitbankのMonaのAPIを取得する関数
+func GetMonaApi() {
 	// GetでWebAPIに対してアクセスする(bitbankの場合エンドポイントはこちらに記述)
 	api, err := http.Get(bitbankBaseUrl + "mona_jpy/ticker")
 
