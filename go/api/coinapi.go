@@ -8,25 +8,25 @@ import (
 )
 
 // bitbankのベースurl
-var bitbankBaseUrl = "https://public.bitbank.cc/"
+const bitbankBaseUrl = "https://public.bitbank.cc/"
 
 // bitflyerのベースurlとエンドポイント
-var bitflyerBaseUrl = "https://api.bitflyer.jp/v1/getticker?product_code="
+const bitflyerBaseUrl = "https://api.bitflyer.jp/v1/getticker?product_code="
 
 // BitFlyerのBitcoinのAPIを取得する関数
 func GetBitcoinApi() {
 	// GetでWebAPIに対してアクセスする
-	api, err := http.Get(bitflyerBaseUrl + "btc_jpy")
+	resp, err := http.Get(bitflyerBaseUrl + "btc_jpy")
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	// 最後にapiをCloseする
-	defer api.Body.Close()
+	defer resp.Body.Close()
 
 	// ReadAllは、エラーまたはEOFに達するまでrから読み込み、読み込んだデータを返す
-	byteArray, err := ioutil.ReadAll(api.Body)
+	byteArray, err := ioutil.ReadAll(resp.Body)
 
 	if err != nil {
 		log.Fatal(err)
@@ -38,17 +38,17 @@ func GetBitcoinApi() {
 // BitFlyerのEthereumのAPIを取得する関数
 func GetEthereumApi() {
 	// GetでWebAPIに対してアクセスする
-	api, err := http.Get(bitflyerBaseUrl + "eth_jpy")
+	resp, err := http.Get(bitflyerBaseUrl + "eth_jpy")
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	// 最後にapiをCloseする
-	defer api.Body.Close()
+	defer resp.Body.Close()
 
 	// ReadAllは、エラーまたはEOFに達するまでrから読み込み、読み込んだデータを返す
-	byteArray, err := ioutil.ReadAll(api.Body)
+	byteArray, err := ioutil.ReadAll(resp.Body)
 
 	if err != nil {
 		log.Fatal(err)
@@ -60,17 +60,17 @@ func GetEthereumApi() {
 // BitbankのXRPのAPIを取得する関数
 func GetXrpApi() {
 	// GetでWebAPIに対してアクセスする(bitbankの場合エンドポイントはこちらに記述)
-	api, err := http.Get(bitbankBaseUrl + "xrp_jpy/ticker")
+	resp, err := http.Get(bitbankBaseUrl + "xrp_jpy/ticker")
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	// 最後にapiをCloseする
-	defer api.Body.Close()
+	defer resp.Body.Close()
 
 	// ReadAllは、エラーまたはEOFに達するまでrから読み込み、読み込んだデータを返す
-	byteArray, err := ioutil.ReadAll(api.Body)
+	byteArray, err := ioutil.ReadAll(resp.Body)
 
 	if err != nil {
 		log.Fatal(err)
@@ -82,17 +82,17 @@ func GetXrpApi() {
 // BitbankのMonaのAPIを取得する関数
 func GetMonaApi() {
 	// GetでWebAPIに対してアクセスする(bitbankの場合エンドポイントはこちらに記述)
-	api, err := http.Get(bitbankBaseUrl + "mona_jpy/ticker")
+	resp, err := http.Get(bitbankBaseUrl + "mona_jpy/ticker")
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	// 最後にapiをCloseする
-	defer api.Body.Close()
+	defer resp.Body.Close()
 
 	// ReadAllは、エラーまたはEOFに達するまでrから読み込み、読み込んだデータを返す
-	byteArray, err := ioutil.ReadAll(api.Body)
+	byteArray, err := ioutil.ReadAll(resp.Body)
 
 	if err != nil {
 		log.Fatal(err)
@@ -104,17 +104,17 @@ func GetMonaApi() {
 // BitbankのBccのAPIを取得する関数
 func GetBccApi() {
 	// GetでWebAPIに対してアクセスする(bitbankの場合エンドポイントはこちらに記述)
-	api, err := http.Get(bitbankBaseUrl + "bcc_jpy/ticker")
+	resp, err := http.Get(bitbankBaseUrl + "bcc_jpy/ticker")
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	// 最後にapiをCloseする
-	defer api.Body.Close()
+	defer resp.Body.Close()
 
 	// ReadAllは、エラーまたはEOFに達するまでrから読み込み、読み込んだデータを返す
-	byteArray, err := ioutil.ReadAll(api.Body)
+	byteArray, err := ioutil.ReadAll(resp.Body)
 
 	if err != nil {
 		log.Fatal(err)
