@@ -6,13 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{% block title %}CoinLang{% endblock %}</title>
-
+  <link rel="stylesheet" href="/css/layout.css">
   {% block css %}{% endblock %}
 </head>
 
 <body>
   <header>
-    <h1><a href="/">Coinlang</a></h1>
+    <div class="header">
+      <a href="/">Coinlang</a>
+      <a href="/signup">SIGNUP</a>
+      <a href="/login">LOGIN</a>
+    </div>
   </header>
 
   <main>
@@ -23,6 +27,7 @@
     <small>© 2019 Kazukichiyadee Inc. All rights reserved.</small>
   </footer>
 
+  <script src="/js/layout.js"></script>
   {% block js %}{% endblock %}
 </body>
 
