@@ -6,23 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{% block title %}CoinLang{% endblock %}</title>
-
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   {% block css %}{% endblock %}
 </head>
 
 <body>
-  <header>
-    <h1><a href="/">Coinlang</a></h1>
-  </header>
 
+
+
+
+  <header>
+    <nav class="navbar fixed-top navbar-dark bg-light">
+      <div class="layout-header">
+        <a class="main-logo" href="/">Coinlang</a>
+        <a class="signup-button" href="/signup">
+          <p class="signup">SIGNUP</p>
+        </a>
+        <a class="login-button" href="/login">
+          <p class="login">LOGIN</p>
+        </a>
+      </div>
+    </nav>
+  </header>
   <main>
     {% block content %}{% endblock %}
   </main>
 
   <footer>
-    <small>© 2019 Kazukichiyadee Inc. All rights reserved.</small>
+    <div class="layout-footer">
+      <small>© 2019 Kazukichiyadee Inc. All rights reserved.</small>
+    </div>
   </footer>
 
+  <script src="/js/layout.js"></script>
   {% block js %}{% endblock %}
 </body>
 
